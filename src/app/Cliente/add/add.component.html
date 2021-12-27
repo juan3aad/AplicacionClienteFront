@@ -1,0 +1,88 @@
+
+<div  class="container col-md-6">
+<div class="card">
+    <div class="card-header">
+        <h3>Add Client</h3>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="miFormulario" novalidate="">
+            <div  class="form-group">
+                <label for="">id:</label>
+                
+                <input class="form-control" type="text" formControlName="id"
+                    [ngClass]="{'is-invalid': !miFormulario.get('id')}">
+                <div *ngIf="miFormulario.controls['id'].errors?.required" class="invalid-feedback">
+                    El id
+                </div>
+                <div *ngIf="miFormulario.controls['id'].errors?.minlength" class="invalid-feedback">
+                    Por lo menos 3 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['id'].errors?.maxlength" class="invalid-feedback">
+                    Maximo 20 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['id'].errors?.pattern" class="invalid-feedback">
+                    Solo letras mayúscula, sin acentos ni Ñ
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Reason:</label>
+                
+                <input class="form-control" type="text" formControlName="reason"
+                    [ngClass]="{'is-invalid': !miFormulario.get('reason')}">
+                <div *ngIf="miFormulario.controls['reason'].errors?.required" class="invalid-feedback">
+                    El reason
+                </div>
+                <div *ngIf="miFormulario.controls['reason'].errors?.minlength" class="invalid-feedback">
+                    Por lo menos 3 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['reason'].errors?.maxlength" class="invalid-feedback">
+                    Maximo 20 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['reason'].errors?.pattern" class="invalid-feedback">
+                    Solo letras mayúscula, sin acentos ni Ñ
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Contact:</label>
+                <!--<input [(ngModel)]="empleado.primerNombre" name="primerNombre" type="text" class="form-control">-->
+                <input class="form-control" type="text" formControlName="contact"
+                    [ngClass]="{'is-invalid': !miFormulario.get('contact')}">
+                <div *ngIf="miFormulario.controls['contact'].errors?.required" class="invalid-feedback">
+                    El contact
+                </div>
+                <div *ngIf="miFormulario.controls['contact'].errors?.minlength" class="invalid-feedback">
+                    Por lo menos 3 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['contact'].errors?.maxlength" class="invalid-feedback">
+                    Maximo 20 caracteres
+                </div>
+                <div *ngIf="miFormulario.controls['contact'].errors?.pattern" class="invalid-feedback">
+                    Solo letras mayúscula, sin acentos ni Ñ
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Region:</label>
+                <!--<input [(ngModel)]="empleado.otrosNombres" name="otrosNombres" type="text" class="form-control">-->
+                <input class="form-control" type="text" formControlName="region"
+                    [ngClass]="{'is-invalid': !miFormulario.get('region')}">
+                <div *ngIf="miFormulario.controls['region'].errors?.pattern" class="invalid-feedback">
+                    Solo letras mayúscula, sin acentos ni Ñ
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Type:</label>
+                <!--<input [(ngModel)]="empleado.otrosNombres" name="otrosNombres" type="text" class="form-control">-->
+                <input class="form-control" type="text" formControlName="type"
+                    [ngClass]="{'is-invalid': !miFormulario.get('type')}">
+                <div *ngIf="miFormulario.controls['type'].errors?.pattern" class="invalid-feedback">
+                    Solo letras mayúscula, sin acentos ni Ñ
+                </div>
+            </div>
+            
+            <br>
+            <button (click)="Guardar()" class="btn btn-danger">Guardar</button>
+        </form>
+    </div>
+</div>
+
+</div>
